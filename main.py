@@ -53,7 +53,7 @@ def construct_min_flow_graph(negative_flow_heap, positive_flow_heap):
         transfer_amount = max(max_negative_flow_node[0], max_positive_flow_node[0])
 
         # Append the edge in our new min flow graph
-        min_flow_graph.append((max_negative_flow_node[1], max_positive_flow_node[1], transfer_amount))
+        min_flow_graph.append((max_negative_flow_node[1], max_positive_flow_node[1], transfer_amount * -1))
 
         # We may have leftovers, create new nodes for these
         new_negative_flow_node = (max_negative_flow_node[0] - transfer_amount, max_negative_flow_node[1])
